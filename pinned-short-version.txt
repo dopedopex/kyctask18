@@ -1,0 +1,15 @@
+REDBELLY KYC: DO YOU NEED IT?
+
+NOT NEEDED: RBNT on an exchange. RBNT or wRBNT on another chain (Ethereum, Base, Solana and others).
+NEEDED: sending, swapping or using apps on Redbelly mainnet, bridging off mainnet, staking, DAO voting.
+BRIDGING ONTO MAINNET: verify and enable your wallet first. Whether an unverified wallet can receive bridged coins is unconfirmed.
+
+Wallet limit: 10 wallets per verified identity.
+Approval: usually a few minutes, rare cases a few days.
+
+Regions (two separate rules):
+- DAO: general membership is open from any region.
+- Redbelly Network: not offered in the 18 jurisdictions in clause 15.1 of its terms.
+
+Full guide: https://pykyc.vercel.app/
+(Attach decision-guide.png)

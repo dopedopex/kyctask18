@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en" data-theme="dark"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Plain-language answers on Redbelly KYC: who needs it, wallet limits, regions, staking, how to get verified, and what to do when it goes wrong.">
+<meta property="og:title" content="Redbelly KYC and wallet activation, in plain language">
+<meta property="og:description" content="Find your situation, get a clear answer, and follow the steps to an activated wallet.">
+<meta property="og:image" content="https://pykyc.vercel.app/decision-guide.png">
+<meta name="twitter:card" content="summary_large_image">
+<title>Redbelly KYC and wallet activation: the plain-language guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Redbelly DAO KYC guide. Brand-kit tokens unchanged: Be Vietnam Pro + JetBrains Mono,
+   brand #EF5350, kit surfaces, 4px controls / 8px containers, kit logos. */
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark;
+--surface:#0c1317;--deep:#0a1014;--slate:#141f26;--steel:#1d3140;--edge:#263641;--on:#f1f5f8;--var:#c2ced6;--outline:#8fa1ad;--ovar:#34444f;--brand:#EF5350;--brand-h:#f95a56;--onbrand:#fff;--primary:#ffb3ae;--ok:#86EFAC;--warn:#FCD34D;--err:#ffb4ab;--low:#111a20;
+--st-needed:#EF5350;--shadow:none;
+--sans:"Be Vietnam Pro",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+--mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){color-scheme:light;--surface:#EDF1F4;--deep:#EDF1F4;--slate:#fff;--steel:#DDE6ED;--edge:#D3DBE1;--on:#0F1A22;--var:#394853;--outline:#596975;--ovar:#C3CDD4;--brand-h:#D93E3B;--primary:#B3272A;--ok:#15803D;--warn:#A16207;--err:#B3261E;--low:#F4F6F8;--st-needed:#D93E3B;--shadow:0 1px 2px rgba(15,26,34,.06),0 6px 18px rgba(15,26,34,.04)}}
+:root[data-theme="light"]{color-scheme:light;--surface:#EDF1F4;--deep:#EDF1F4;--slate:#fff;--steel:#DDE6ED;--edge:#D3DBE1;--on:#0F1A22;--var:#394853;--outline:#596975;--ovar:#C3CDD4;--brand-h:#D93E3B;--primary:#B3272A;--ok:#15803D;--warn:#A16207;--err:#B3261E;--low:#F4F6F8;--st-needed:#D93E3B;--shadow:0 1px 2px rgba(15,26,34,.06),0 6px 18px rgba(15,26,34,.04)}
+
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--surface);color:var(--on);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--deep);z-index:30}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:12px;top:-80px;z-index:60;background:var(--brand);color:var(--onbrand);padding:10px 16px;border-radius:4px;font-weight:600;text-decoration:none}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + 8px);color:var(--onbrand)}
+
+/* ---------- Type ---------- */
+h1,h2,h3{text-wrap:balance}
+h1{font-size:clamp(32px,5.2vw,52px);font-weight:700;letter-spacing:-.025em;line-height:1.1;margin:0 0 16px}
+h2{font-size:clamp(27px,3.6vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin:4px 0 12px}
+h3{font-size:20px;font-weight:600;letter-spacing:-.005em;line-height:1.3;margin:0 0 12px}
+p{margin:0 0 14px;text-wrap:pretty}
+.lead{color:var(--var);font-size:19px;line-height:1.6;max-width:62ch}
+.card p,.note{max-width:72ch}
+strong{font-weight:600}
+a{color:var(--primary);text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:color-mix(in srgb,var(--primary) 45%,transparent);transition:color .15s,text-decoration-color .15s}
+a:hover{color:var(--brand-h);text-decoration-color:currentColor}
+code,.m{font-family:var(--mono);font-size:.92em}
+
+/* ---------- Navigation ---------- */
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--deep) 86%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--edge);z-index:20}
+nav .w{display:flex;align-items:center;gap:12px;padding:8px 20px}
+nav .links{display:flex;gap:4px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;padding:2px 0}
+nav .links::-webkit-scrollbar{display:none}
+nav a{position:relative;white-space:nowrap;color:var(--var);text-decoration:none;font-size:14px;font-weight:500;padding:8px 12px;border-radius:4px;transition:background .15s,color .15s}
+nav a:hover{background:var(--low);color:var(--on)}
+nav a[aria-current="true"]{color:var(--on);background:var(--low);font-weight:600}
+nav a[aria-current="true"]::after{content:"";position:absolute;left:12px;right:12px;bottom:2px;height:2px;border-radius:2px;background:var(--brand)}
+.tt{flex:none;display:inline-flex;align-items:center;background:var(--slate);color:var(--on);border:1px solid var(--edge);border-radius:4px;padding:8px 12px;font:500 13px/1 var(--sans);cursor:pointer;transition:border-color .15s,background .15s}
+.tt:hover{border-color:var(--outline);background:var(--low)}
+.tt svg{width:16px;height:16px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tt .to-light,.tt .to-dark{display:none;align-items:center;gap:8px}
+:root[data-theme="dark"] .tt .to-light{display:inline-flex}
+:root[data-theme="light"] .tt .to-dark{display:inline-flex}
+
+/* ---------- Hero (always dark, per kit logo-on-dark) ---------- */
+header{--deep:#0a1014;--slate:#141f26;--steel:#1d3140;--edge:#263641;--on:#f1f5f8;--var:#c2ced6;--outline:#8fa1ad;--ovar:#34444f;--primary:#ffb3ae;--brand-h:#f95a56;--ok:#86EFAC;--warn:#FCD34D;--low:#111a20;--st-needed:#EF5350;--shadow:none;
+background:var(--deep);color:var(--on);border:1px solid var(--edge);border-radius:8px;padding:44px 44px 36px;margin:28px 0 0;box-shadow:inset 0 4px 0 var(--brand)}
+.hero{display:grid;grid-template-columns:auto minmax(0,1fr);gap:40px;align-items:center}
+header .logo{display:block;height:156px;width:auto}
+header h1{margin-bottom:14px}
+header .lead{margin:0}
+.band{margin:32px 0 0}
+.band>strong{display:block;font-size:17px;font-weight:600;margin-bottom:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card.lim{background:var(--slate);border:1px solid var(--edge);border-left:4px solid var(--c);border-radius:4px;padding:16px 18px;font-size:16px;line-height:1.55;color:var(--var);box-shadow:none;margin:0}
+.card.lim-dao{--c:var(--ok)}.card.lim-net{--c:var(--brand)}
+.lim .tag{display:flex;background:none;border:0;padding:0;margin:0 0 6px;font:700 15px/1.3 var(--sans);letter-spacing:0;color:var(--on)}
+.lim .tag::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--c)}
+.legend{margin:20px 0 0;padding:16px 18px;background:var(--low);border:1px solid var(--edge);border-radius:4px;font-size:15px;line-height:1.9;color:var(--var)}
+.legend strong{color:var(--on)}
+
+/* ---------- Sections ---------- */
+section{margin-top:44px;padding:48px 0 12px;border-top:1px solid var(--edge)}
+.tag{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--sans);letter-spacing:.01em;color:var(--primary);background:color-mix(in srgb,var(--brand) 12%,transparent);border:1px solid color-mix(in srgb,var(--brand) 40%,transparent);padding:7px 11px;border-radius:4px;margin-bottom:14px}
+
+/* ---------- Cards ---------- */
+.card{background:var(--slate);border:1px solid var(--edge);border-radius:8px;padding:26px 28px;margin:16px 0;box-shadow:var(--shadow);transition:border-color .2s,box-shadow .2s}
+.card>:last-child{margin-bottom:0}
+.card:target{border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 25%,transparent)}
+.ans{background:var(--steel);border:1px solid var(--edge);border-left:4px solid var(--brand);border-radius:4px;padding:14px 18px;font-size:18px;font-weight:600;line-height:1.45;margin:0 0 16px;max-width:none}
+.ans::before{content:"Short answer";display:block;font:600 12.5px/1 var(--sans);letter-spacing:.02em;color:var(--primary);margin-bottom:8px}
+.ans .tg{font-weight:700}
+
+/* ---------- Status badges (match decision-guide.png) ---------- */
+.pill{--ic-check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.6l3.2 3.2L13 4.6'/%3E%3C/svg%3E");
+--ic-bang:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2.8v6.6M8 13v.1'/%3E%3C/svg%3E");
+--ic-q:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.6 6.1a2.4 2.4 0 1 1 3.5 2.1c-.7.4-1.1.9-1.1 1.7M8 13v.1'/%3E%3C/svg%3E");
+display:inline-flex;align-items:center;gap:9px;min-width:150px;padding:8px 14px 8px 10px;border:1px solid color-mix(in srgb,currentColor 50%,transparent);background:color-mix(in srgb,currentColor 11%,transparent);border-radius:4px;font:700 12.5px/1 var(--mono);letter-spacing:.06em;white-space:nowrap}
+.pill::before{content:"";flex:none;width:16px;height:16px;background:currentColor;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat}
+.pill span{color:var(--on)}
+.needed{color:var(--st-needed);--ic:var(--ic-bang)}
+.not{color:var(--ok);--ic:var(--ic-check)}
+.unc{color:var(--warn);--ic:var(--ic-q)}
+
+/* Source labels */
+.tg{display:inline-block;font:700 11px/1 var(--sans);letter-spacing:.06em;padding:4px 8px;border-radius:4px;border:1px solid var(--ovar);color:var(--outline);background:color-mix(in srgb,var(--outline) 10%,transparent);vertical-align:.08em;white-space:nowrap}
+.tg.o{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 55%,transparent);background:color-mix(in srgb,var(--ok) 10%,transparent)}
+.tg.c{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 55%,transparent);background:color-mix(in srgb,var(--warn) 10%,transparent)}
+
+/* Source references [1] [5] */
+a[href^="#s"]:not([href="#src"]){display:inline-block;font:600 12px/1 var(--mono);text-decoration:none;color:var(--primary);background:var(--low);border:1px solid var(--edge);border-radius:4px;padding:4px 6px 3px;margin:0 1px;vertical-align:.06em;transition:border-color .15s,background .15s,color .15s}
+a[href^="#s"]:not([href="#src"]):hover{border-color:var(--primary);background:color-mix(in srgb,var(--brand) 12%,var(--low));color:var(--on)}
+
+/* ---------- Table ---------- */
+.tw{overflow-x:auto;border:1px solid var(--edge);border-radius:8px;margin-top:22px;background:var(--slate);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:680px}
+th,td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--edge);vertical-align:top;font-size:16px;line-height:1.55}
+th{font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--outline);background:var(--low);padding:12px 18px}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600;width:29%}
+th:nth-child(2),td:nth-child(2){width:196px;white-space:nowrap}
+@media(min-width:701px){
+tbody tr:hover td{background:var(--low)}
+tbody tr:has(.pill.needed) td:first-child{box-shadow:inset 4px 0 0 var(--st-needed)}
+tbody tr:has(.pill.not) td:first-child{box-shadow:inset 4px 0 0 var(--ok)}
+tbody tr:has(.pill.unc) td:first-child{box-shadow:inset 4px 0 0 var(--warn)}
+}
+
+/* ---------- Part A layout ---------- */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:stretch;margin-top:16px}
+.split figure{margin:0}
+.split .dl{margin:0;display:flex;flex-direction:column;justify-content:center;border-left:4px solid var(--brand)}
+.split .dl .actions{margin-top:8px;flex-direction:column;align-items:stretch;max-width:260px}
+.split .dl .btn{justify-content:center}
+img.gd{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--edge);box-shadow:var(--shadow)}
+
+/* ---------- Buttons ---------- */
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:4px;border:1px solid transparent;font:700 15px/1.2 var(--sans);text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s,color .15s,transform .15s}
+.btn svg{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--brand);border-color:var(--brand);color:var(--onbrand)}
+.btn-primary:hover{background:var(--brand-h);border-color:var(--brand-h);color:var(--onbrand)}
+.btn-secondary{background:transparent;border-color:var(--outline);color:var(--on)}
+.btn-secondary:hover{background:var(--low);border-color:var(--on);color:var(--on)}
+
+/* ---------- Lists ---------- */
+ul{padding-left:22px}li{margin:4px 0}
+.card>ul:not(.jur){list-style:none;padding:0;margin:0}
+.card>ul:not(.jur)>li{position:relative;padding-left:34px;margin:14px 0}
+.card>ul:not(.jur)>li:first-child{margin-top:0}
+.card>ul:not(.jur)>li::before{content:"";position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:4px;background:color-mix(in srgb,var(--ok) 16%,transparent);border:1px solid color-mix(in srgb,var(--ok) 55%,transparent)}
+.card>ul:not(.jur)>li::after{content:"";position:absolute;left:5px;top:10px;width:10px;height:6px;border-left:2px solid var(--ok);border-bottom:2px solid var(--ok);transform:translateY(-2px) rotate(-45deg);transform-origin:center}
+.card>ol:not(.steps){list-style:none;counter-reset:n;padding:0;margin:0}
+.card>ol:not(.steps)>li{counter-increment:n;position:relative;padding-left:38px;margin:12px 0}
+.card>ol:not(.steps)>li::before{content:counter(n);position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:4px;border:1px solid var(--brand);color:var(--primary);font:700 13px/24px var(--sans);text-align:center}
+.jur{list-style:none;padding:0;margin:14px 0;display:flex;flex-wrap:wrap;gap:8px}
+.jur li{margin:0;padding:7px 12px;background:var(--low);border:1px solid var(--edge);border-radius:4px;font-size:15px;line-height:1.4;color:var(--on)}
+
+/* Steps: a real sequence, so numbered and joined by a line */
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:20px 0 0}
+ol.steps li{counter-increment:s;position:relative;background:var(--slate);border:1px solid var(--edge);border-radius:8px;padding:18px 22px 18px 72px;margin:12px 0;box-shadow:var(--shadow)}
+ol.steps li::before{content:counter(s);position:absolute;left:18px;top:16px;width:34px;height:34px;border-radius:4px;background:var(--brand);color:var(--onbrand);font:700 15px/34px var(--sans);text-align:center}
+ol.steps li:not(:last-child)::after{content:"";position:absolute;left:34px;top:56px;bottom:-13px;width:2px;background:var(--ovar)}
+#c ol.steps li>strong:first-child{display:block;font-size:18px;font-weight:600;line-height:1.35;margin-bottom:3px}
+.card ol.steps li{background:var(--low);box-shadow:none}
+
+.note{background:color-mix(in srgb,var(--warn) 7%,var(--slate));border:1px solid var(--edge);border-left:4px solid var(--warn);border-radius:4px;padding:14px 18px;margin:18px 0;color:var(--var)}
+.note strong{color:var(--on)}
+
+/* ---------- Sources ---------- */
+ol.src{list-style:none;counter-reset:src;padding:0;margin:20px 0 0;border:1px solid var(--edge);border-radius:8px;overflow:hidden;background:var(--slate);box-shadow:var(--shadow)}
+.src li{counter-increment:src;position:relative;margin:0;padding:14px 18px 14px 62px;border-bottom:1px solid var(--edge);font-size:15px;line-height:1.6;overflow-wrap:anywhere;transition:background .2s}
+.src li:last-child{border-bottom:0}
+.src li::before{content:counter(src);position:absolute;left:18px;top:14px;min-width:30px;height:24px;padding:0 6px;border-radius:4px;background:var(--low);border:1px solid var(--edge);color:var(--primary);font:600 12px/22px var(--mono);text-align:center}
+.src li:target{background:color-mix(in srgb,var(--brand) 10%,var(--slate));box-shadow:inset 4px 0 0 var(--brand)}
+.src li .tg{margin-right:8px}
+
+/* ---------- Footer ---------- */
+footer{margin-top:56px;padding:32px 0 56px;border-top:1px solid var(--edge);color:var(--outline);font-size:14px}
+footer .foot{display:flex;align-items:center;gap:22px}
+footer p{margin:0;max-width:60ch}
+.fl{height:68px;width:auto;flex:none}
+.ld{display:none}.ll{display:block}
+:root[data-theme="dark"] .ld{display:block}:root[data-theme="dark"] .ll{display:none}
+
+/* ---------- Small screens ---------- */
+@media(max-width:820px){
+.split{grid-template-columns:1fr}
+.hero{grid-template-columns:1fr;gap:22px}
+header .logo{height:112px}
+}
+@media(max-width:700px){
+body{font-size:16.5px}
+.lead{font-size:18px}
+header{padding:28px 20px 22px}
+section{margin-top:32px;padding-top:40px}
+.card{padding:20px}
+.two{grid-template-columns:1fr}
+.tt .lbl{display:none}
+.tt{padding:9px 11px}
+.tw{border:0;overflow:visible;background:none;box-shadow:none}
+table,tbody,tr,td{display:block}
+table{min-width:0}
+thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+tr{display:flex;flex-direction:column;gap:8px;background:var(--slate);border:1px solid var(--edge);border-radius:8px;padding:16px;margin:0 0 10px;box-shadow:var(--shadow)}
+td,td:first-child{padding:0;border:0;width:auto;font-size:16px}
+td:nth-child(2){order:-1;width:auto}
+tr:has(.pill.needed){border-left:4px solid var(--st-needed)}
+tr:has(.pill.not){border-left:4px solid var(--ok)}
+tr:has(.pill.unc){border-left:4px solid var(--warn)}
+ol.steps li{padding:16px 16px 16px 62px}
+ol.steps li::before{left:14px;top:14px}
+ol.steps li:not(:last-child)::after{left:30px}
+footer .foot{flex-direction:column;align-items:flex-start;gap:16px}
+.btn{width:100%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<nav aria-label="Guide sections"><div class="w"><div class="links"><a href="#a">A. Do I need KYC?</a><a href="#b">B. Five questions</a><a href="#c">C. Get verified</a><a href="#d">D. When it goes wrong</a><a href="#src">Sources</a></div><button class="tt" id="tt" type="button" aria-label="Switch light or dark theme"><span class="to-light"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span class="lbl">Light mode</span></span><span class="to-dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><span class="lbl">Dark mode</span></span></button></div></nav>
+<div class="w" id="main">
+<header>
+<div class="hero"><img class="logo" alt="Redbelly DAO" src="dao-logo-on-dark.png">
+<div><h1>Redbelly KYC and wallet activation, in plain language</h1>
+<p class="lead">One page for the questions the community asks again and again. Find your situation, get a clear answer, and follow the steps to an activated wallet.</p></div></div>
+<div class="band"><strong>Two different regional limits exist. Keep them apart.</strong>
+<div class="two"><div class="card lim lim-dao"><div class="tag">The DAO</div>The DAO no longer restricts which regions can join. Anyone can join the DAO from any region.</div><div class="card lim lim-net"><div class="tag">Redbelly Network</div>The network still does not offer services in certain jurisdictions, listed in clause 15.1 of its terms. This is unchanged. <a href="#b4">See Question 4</a>.</div></div></div>
+<div class="legend">How to read the labels: <span class="tg o">OFFICIAL</span> comes from an official Redbelly or Averer page. <span class="tg">DAO BRIEF</span> comes from the DAO’s task brief. <span class="tg c">COMMUNITY REPORTED</span> and <strong>unconfirmed</strong> mean no official page confirms it yet. Every source is in the <a href="#src">source list</a>. Last verified: 19 October 2026.</div>
+</header>
+
+<section id="a"><div class="tag">Part A</div><h2>Do I need KYC?</h2>
+<p class="lead">KYC here means Redbelly Access, with verification by Averer. It gives your wallet permission to send transactions on Redbelly Network. Find your row.</p>
+<div class="tw"><table><thead><tr><th>Your situation</th><th>Answer</th><th>Why</th></tr></thead><tbody>
+<tr><td>I hold RBNT on an exchange</td><td><span class="pill not"><span>NOT NEEDED</span></span></td><td>Redbelly KYC is for network access. The exchange has its own verification rules, which are separate. <a href="#s1">[1]</a></td></tr>
+<tr><td>I hold wrapped RBNT on another chain (Ethereum, Base, Polygon, BSC and others)</td><td><span class="pill not"><span>NOT NEEDED</span></span></td><td>Those are other chains, not Redbelly mainnet. The access credential gives write access to Redbelly Network only. <a href="#s1">[1]</a> <a href="#s7">[7]</a></td></tr>
+<tr><td>I bridge onto Redbelly mainnet (receiving)</td><td><span class="pill unc"><span>UNCONFIRMED</span></span></td><td>No official page says whether an unverified wallet can receive bridged RBNT. To be safe, verify and enable your wallet before you bridge. Anything you do after arrival needs it anyway.</td></tr>
+<tr><td>I bridge off Redbelly mainnet (sending back to another chain)</td><td><span class="pill needed"><span>NEEDED</span></span></td><td>The transaction is sent from your Redbelly wallet, so the wallet must be enabled. <a href="#s1">[1]</a> <a href="#s2">[2]</a></td></tr>
+<tr><td>I use Redbelly mainnet (send, swap, use apps)</td><td><span class="pill needed"><span>NEEDED</span></span></td><td>Users must claim an access credential before they can self-enable write access. <a href="#s1">[1]</a> <a href="#s2">[2]</a></td></tr>
+<tr><td>I stake on Redbelly mainnet</td><td><span class="pill needed"><span>NEEDED</span></span></td><td>Staking is a transaction on the network. Official staking is a deposit into a staking contract on Redbelly. <a href="#s8">[8]</a> Staking on an exchange follows that exchange’s rules.</td></tr>
+</tbody></table></div>
+<div class="card"><h3>Native vs wrapped: the one-line test</h3><p style="margin:0"><strong>Native</strong> RBNT lives on Redbelly mainnet. <strong>Wrapped</strong> RBNT is a copy on another chain, created through a bridge such as LayerZero. If you never send a transaction on Redbelly mainnet, you do not need Redbelly KYC. <a href="#s7">[7]</a></p></div>
+<div class="split"><figure><img class="gd" src="decision-guide.png" alt="Decision guide: holding RBNT on an exchange or wrapped RBNT on another chain does not need Redbelly KYC. Receiving a bridge onto mainnet is unconfirmed. Sending, using and staking on Redbelly mainnet need it."></figure>
+<div class="card dl"><h3>Download the decision guide</h3><p>The same answers as the table, as one image you can save or share. PNG works in chats and social posts. SVG stays sharp at any size.</p><div class="actions"><a class="btn btn-primary" href="decision-guide.png" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10.5l5 5 5-5M4 20h16"/></svg>Download PNG</a><a class="btn btn-secondary" href="decision-guide.svg" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10.5l5 5 5-5M4 20h16"/></svg>Download SVG</a></div></div></div></section>
+
+<section id="b"><div class="tag">Part B</div><h2>The five common questions</h2>
+
+<div class="card" id="b1"><h3>1. When do I need KYC, and when don’t I?</h3><p class="ans">You need KYC to send transactions on Redbelly Network. You do not need it to hold RBNT on an exchange or wrapped RBNT on another chain.</p>
+<p>Before a wallet can write to the network, its owner claims an access credential from an accredited issuer and then self-enables the wallet. <a href="#s1">[1]</a> <a href="#s3">[3]</a> Averer is the issuer that verifies your identity on Redbelly Access. <a href="#s5">[5]</a> See the <a href="#a">Part A table</a> for each situation.</p></div>
+
+<div class="card" id="b2"><h3>2. How many wallets can one verified identity cover?</h3><p class="ans">About 10 wallets per verified identity. <span class="tg">DAO BRIEF</span></p>
+<p>After you verify and enable your first wallet, Redbelly Access offers to add more wallets to the same identity, with no new verification. <a href="#s5">[5]</a> The 10-wallet figure comes from the DAO brief and is <strong>unconfirmed</strong> by an official Averer or Redbelly page. <a href="#s10">[10]</a> What happens past the limit is also <strong>unconfirmed</strong>, so ask Averer through <a href="#d3">Part D</a>.</p></div>
+
+<div class="card" id="b3"><h3>3. How long does approval usually take?</h3><p class="ans">Unconfirmed. No official page gives a time.</p>
+<p>No Redbelly docs page and no page on Averer’s site gives a typical approval time (checked 19 October 2026). Do not rely on a number from chat. If you are waiting and worried, see <a href="#d1">Part D</a>.</p></div>
+
+<div class="card" id="b4"><h3>4. Can I join from my country?</h3><p class="ans">The DAO: yes, from any region. The network: not if you are in a clause 15.1 jurisdiction.</p>
+<p><strong>DAO.</strong> The DAO used to restrict regions. That restriction has been removed, and anyone can now join the DAO from any region. <span class="tg">DAO BRIEF</span> <a href="#s10">[10]</a></p>
+<p><strong>Redbelly Network.</strong> The network does not offer its services in the jurisdictions below. People who are tax residents of, or located in, those places are not allowed to use the website, platform and tools. <span class="tg o">OFFICIAL</span> <a href="#s6">[6]</a></p>
+<ul class="jur"><li>Afghanistan</li><li>Central African Republic</li><li>Democratic People’s Republic of Korea</li><li>Democratic Republic of the Congo</li><li>Guinea-Bissau*</li><li>Iran</li><li>Iraq</li><li>Lebanon</li><li>Libya</li><li>Myanmar</li><li>Russia</li><li>Somalia</li><li>South Sudan</li><li>Sudan</li><li>Syria</li><li>Ukraine</li><li>Yemen</li><li>Zimbabwe</li></ul>
+<p style="font-size:14px;color:var(--outline)">*The terms spell this “Guinea-Bussau”. Check the live terms for the current list before you rely on this one.</p></div>
+
+<div class="card" id="b5"><h3>5. Do I need KYC to stake, and why?</h3><p class="ans">Yes, to stake on Redbelly mainnet itself. Exchange or app staking follows that platform’s own rules.</p>
+<p>Redbelly’s official staking page describes node operators depositing 100,000 RBNT into a staking contract on the network, and every write to Redbelly needs an enabled wallet. <a href="#s8">[8]</a> <a href="#s1">[1]</a> Staking through an exchange is not a Redbelly transaction, so Redbelly KYC is not part of it. For a third-party staking app, no official page says, so treat it as <strong>unconfirmed</strong> and ask the app.</p></div>
+</section>
+
+<section id="c"><div class="tag">Part C</div><h2>Get verified and activate a wallet</h2>
+<p style="color:var(--var)">Redbelly’s onboarding overview lists the same three stages: wallet authentication, KYC verification and on-chain permission setup. <a href="#s4">[4]</a></p>
+<div class="card"><h3>Before you start</h3><ul>
+<li>A supported wallet app. Redbelly Access names MetaMask and Coinbase Wallet. <a href="#s5">[5]</a></li>
+<li>A valid passport. Redbelly requires a valid photo ID, verified by biometric checks. <a href="#s1">[1]</a></li>
+<li>A device that can run the identity check. Averer carries out the verification. <a href="#s5">[5]</a></li>
+<li>A little RBNT in the wallet for the enabling transaction. <span class="tg c">COMMUNITY REPORTED</span> <a href="#s11">[11]</a> Unconfirmed officially. Redbelly Access says the issuer covers the fees to grant access. <a href="#s5">[5]</a></li></ul></div>
+<ol class="steps">
+<li><strong>Open Redbelly Access.</strong> Go to <a href="https://access.redbelly.network/">access.redbelly.network</a>. Check the address carefully. It is the official Redbelly access dApp. <a href="#s1">[1]</a></li>
+<li><strong>Connect your wallet.</strong> Choose the wallet you want to activate. Use the address you plan to use on Redbelly mainnet. <a href="#s5">[5]</a></li>
+<li><strong>Verify your identity with Averer.</strong> Follow the prompts and prove you hold a valid photo ID, checked with biometrics. Enter your details only on the Redbelly Access flow. <a href="#s1">[1]</a> <a href="#s5">[5]</a></li>
+<li><strong>Claim your access credential.</strong> Once Averer verifies you, your wallet receives the Redbelly Network Access Credential. <a href="#s5">[5]</a></li>
+<li><strong>Enable your wallet.</strong> Self-enable write access and approve the transaction in your wallet app. The terms refer to this button as “Enable Access”. <a href="#s1">[1]</a> <a href="#s6">[6]</a></li>
+<li><strong>Check it worked.</strong> Reconnect the same wallet at Redbelly Access and read its account status. Then try a small transaction on Redbelly mainnet. <span class="tg c">COMMUNITY REPORTED</span> <a href="#s11">[11]</a></li>
+<li><strong>Add another wallet (optional).</strong> After your first wallet is enabled, Redbelly Access offers to add more accounts connected to your identity. Connect the new wallet, follow the prompts, and you do not need to verify again. The limit is about 10 wallets. <a href="#s5">[5]</a> <a href="#s10">[10]</a></li>
+</ol>
+<div class="actions"><a class="btn btn-primary" href="https://access.redbelly.network/" target="_blank" rel="noopener">Open Redbelly Access<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></div>
+<p class="note"><strong>Screenshots.</strong> This guide has none. The flow requires a real ID check, and a screenshot of it would risk showing personal information. Wording on the live portal can change. If a button name differs from the above, follow the live screen.</p>
+<p class="note"><strong>Testnet is separate.</strong> After you enable your first account, Redbelly Access offers a Testnet account too. <a href="#s5">[5]</a> Access is enabled per network, so enable on the one you use. <span class="tg c">COMMUNITY REPORTED</span> <a href="#s11">[11]</a></p></section>
+
+<section id="d"><div class="tag">Part D</div><h2>When something goes wrong</h2>
+<div class="card" id="d1"><h3>Approval is taking too long</h3><ol><li>Make sure you used the official site, <a href="https://access.redbelly.network/">access.redbelly.network</a>, and the wallet you plan to use.</li><li>Return to the portal with the same wallet to see its status.</li><li>No official waiting time exists, so do not guess. If nothing changes, <a href="#d4">open a ticket with Averer</a>.</li></ol></div>
+<div class="card" id="d2"><h3>My verification was rejected</h3><p>Redbelly Access tells you to contact Averer for problems with identity verification. <a href="#s5">[5]</a> Averer’s site links to a help portal for support. <a href="#s9">[9]</a> <a href="#s12">[12]</a> <a href="#d4">Open a ticket</a> and say what the portal told you. No official page lists rejection reasons, so do not assume one.</p></div>
+<div class="card" id="d3"><h3>I reached the wallet limit</h3><p>The limit is about 10 wallets per verified identity. <span class="tg">DAO BRIEF</span> <a href="#s10">[10]</a> What happens past it is <strong>unconfirmed</strong>. Pick the 10 you need most, and <a href="#d4">ask Averer</a> if you need more.</p></div>
+<div class="card" id="d4"><h3>How to open a support ticket with Averer</h3>
+<ol class="steps" style="margin-top:12px"><li>Open the <a href="https://averer-help.freshdesk.com/support/login">Averer help portal</a>. It is the page behind <strong>Contact support</strong> in the top menu of <a href="https://averer.co/">averer.co</a>. <a href="#s12">[12]</a></li>
+<li>Sign in, or create a portal account if it asks, then submit a ticket. The exact form fields are <strong>unconfirmed</strong> and may change, so follow the form on screen.</li>
+<li>Describe the problem in plain words: what you tried, what the portal said, and which public wallet address is affected.</li>
+<li>Never send photos of your ID, seed phrase or private keys in a ticket.</li></ol>
+<div class="actions"><a class="btn btn-secondary" href="https://averer-help.freshdesk.com/support/login" target="_blank" rel="noopener">Open the Averer help portal<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></div></div>
+</section>
+
+<section id="src"><h2>Sources</h2><p style="color:var(--var)">Each claim above points to a number here. Pages accessed 19 October 2026.</p>
+<ol class="src">
+<li id="s1"><span class="tg o">OFFICIAL</span> Accessing Redbelly Network (claim the credential, self-enable, passport and biometrics): <a href="https://vine.redbelly.network/identity/user-access/">vine.redbelly.network/identity/user-access/</a></li>
+<li id="s2"><span class="tg o">OFFICIAL</span> Identity and participation (participants must prove identity; credential before write access): <a href="https://vine.redbelly.network/identity/">vine.redbelly.network/identity/</a></li>
+<li id="s3"><span class="tg o">OFFICIAL</span> Accredited issuers: <a href="https://vine.redbelly.network/identity/accredited-issuers/">vine.redbelly.network/identity/accredited-issuers/</a></li>
+<li id="s4"><span class="tg o">OFFICIAL</span> Individual onboarding overview (wallet authentication, KYC verification, on-chain permission setup): <a href="https://docs.redbelly.network/pages/eligibility-sdk/onboarding/individual/overview/">docs.redbelly.network/…/individual/overview/</a></li>
+<li id="s5"><span class="tg o">OFFICIAL</span> Redbelly Access FAQ (MetaMask and Coinbase Wallet, Averer verifies, add more accounts, contact Averer, issuer covers fees): <a href="https://access.redbelly.network/">access.redbelly.network</a></li>
+<li id="s6"><span class="tg o">OFFICIAL</span> Redbelly terms and conditions, clauses 15.1 and 15.2 and the “Enable Access” button: <a href="https://redbelly.network/terms-and-conditions">redbelly.network/terms-and-conditions</a></li>
+<li id="s7"><span class="tg o">OFFICIAL</span> Bridged tokens via LayerZero (RBNT on Ethereum, Base, Polygon, BSC and more): <a href="https://vine.redbelly.network/bridged-tokens/layerzero/">vine.redbelly.network/bridged-tokens/layerzero/</a></li>
+<li id="s8"><span class="tg o">OFFICIAL</span> Staking (a contract call on Redbelly): <a href="https://vine.redbelly.network/nodes/staking/">vine.redbelly.network/nodes/staking/</a></li>
+<li id="s9"><span class="tg o">OFFICIAL</span> Averer (support for verifying identity on Redbelly Network): <a href="https://averer.co/">averer.co</a></li>
+<li id="s10"><span class="tg">DAO BRIEF</span> DAO position (regional restriction removed) and the roughly 10-wallet limit, as given in the DAO task brief. No public page retrieved. DAO platform: <a href="https://redbelly-governance.vercel.app/">redbelly-governance.vercel.app</a></li>
+<li id="s11"><span class="tg c">COMMUNITY REPORTED</span> Developer troubleshooting post (funded account needed to enable; enabled per network): <a href="https://dev.to/rahmandefi/redbelly-network-troubleshooting-fixes-for-the-21-most-common-developer-errors-17i">dev.to post</a></li>
+<li id="s12"><span class="tg o">OFFICIAL</span> Averer help portal (the “Contact support” link on averer.co): <a href="https://averer-help.freshdesk.com/support/login">averer-help.freshdesk.com/support/login</a></li>
+</ol></section>
+<footer><div class="foot"><img class="fl ld" alt="Redbelly DAO" src="dao-logo-on-dark.png"><img class="fl ll" alt="Redbelly DAO" src="dao-logo-on-light.png"><p>This guide is general information, not financial or legal advice. Always check the live official pages before you act.</p></div></footer>
+</div>
+<script>
+(function(){
+var r=document.documentElement,b=document.getElementById("tt");
+function set(t){r.setAttribute("data-theme",t)}
+var saved=null;try{saved=localStorage.getItem("rb-theme")}catch(e){}
+if(saved==="light"||saved==="dark"){set(saved)}
+else if(window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches){set("light")}
+else{set("dark")}
+b.addEventListener("click",function(){
+var n=r.getAttribute("data-theme")==="dark"?"light":"dark";set(n);
+try{localStorage.setItem("rb-theme",n)}catch(e){}
+});
+var box=document.querySelector("nav .links");
+var links=[].slice.call(box.querySelectorAll("a"));
+var byId={};links.forEach(function(a){byId[a.getAttribute("href").slice(1)]=a});
+function mark(id){
+links.forEach(function(a){a.removeAttribute("aria-current")});
+var a=byId[id];if(!a)return;
+a.setAttribute("aria-current","true");
+var l=a.offsetLeft-20;
+if(box.scrollWidth>box.clientWidth){box.scrollTo({left:l,behavior:"smooth"})}
+}
+if("IntersectionObserver" in window){
+var io=new IntersectionObserver(function(es){
+es.forEach(function(e){if(e.isIntersecting){mark(e.target.id)}});
+},{rootMargin:"-25% 0px -65% 0px"});
+Object.keys(byId).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s)});
+}
+})();
+</script></body></html>
