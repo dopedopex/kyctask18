@@ -1,15 +1,13 @@
-REDBELLY KYC: DO YOU NEED IT?
+Redbelly KYC in 30 seconds
 
-NOT NEEDED: RBNT on an exchange. RBNT or wRBNT on another chain (Ethereum, Base, Solana and others).
-NEEDED: sending, swapping or using apps on Redbelly mainnet, bridging off mainnet, staking, DAO voting.
-BRIDGING ONTO MAINNET: verify and enable your wallet first. Whether an unverified wallet can receive bridged coins is unconfirmed.
+NEEDED (verify and enable your wallet at access.redbelly.network): send, swap or use apps, bridge onto or off Redbelly mainnet, or stake on Redbelly mainnet.
+NOT NEEDED: holding RBNT on an exchange, or wrapped or bridged RBNT on another chain.
 
-Wallet limit: 10 wallets per verified identity.
-Approval: usually a few minutes, rare cases a few days.
+Approval time: usually a few minutes, in rare cases a few days (Redbelly Access’s own wording while pending). Press “Check verification status”. Still pending after a few days: open an Averer ticket at https://averer-help.freshdesk.com/support/tickets/new
 
-Regions (two separate rules):
-- DAO: general membership is open from any region.
-- Redbelly Network: not offered in the 18 jurisdictions in clause 15.1 of its terms.
+Wallets: up to 10 per verified identity. At 10 the portal shows “Account allocation exhausted.”
 
+Regions: the DAO is open to every region (Snapshot vote closed 5 July 2026). Redbelly Network still does not offer services in the clause 15.1 jurisdictions. These are two separate rules.
+
+Never share your seed phrase, private key or ID photos.
 Full guide: https://pykyc.vercel.app/
-(Attach decision-guide.png)
