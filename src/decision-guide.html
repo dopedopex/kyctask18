@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Decision guide source</title>
+<!-- Editable source for decision-guide.png (1080 x 1080). Rebuild with: node scripts/build.mjs -->
+<style>
+@font-face{font-family:"Be Vietnam Pro";src:url(../fonts/BeVietnamPro-Regular.ttf);font-weight:400}
+@font-face{font-family:"Be Vietnam Pro";src:url(../fonts/BeVietnamPro-SemiBold.ttf);font-weight:600}
+@font-face{font-family:"Be Vietnam Pro";src:url(../fonts/BeVietnamPro-Bold.ttf);font-weight:700}
+@font-face{font-family:"JetBrains Mono";src:url(../fonts/JetBrainsMono.ttf);font-weight:100 800}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1080px}
+body{background:#0c1317;color:#f1f5f8;font-family:"Be Vietnam Pro",sans-serif;padding:64px;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.top img{height:84px}
+.kick{font:700 16px/1 "Be Vietnam Pro";letter-spacing:.1em;text-transform:uppercase;color:#ffb3ae;margin-top:28px}
+h1{font-size:60px;line-height:1.08;font-weight:700;letter-spacing:-.02em;margin-top:14px}
+.sub{font-size:21px;color:#c2ced6;margin-top:14px;max-width:880px;line-height:1.4}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px}
+.col{background:#141f26;border:1px solid #263641;border-radius:8px;padding:28px}
+.st{display:flex;align-items:center;gap:12px;font:600 20px/1 "JetBrains Mono";letter-spacing:.05em;text-transform:uppercase}
+.st i{width:14px;height:14px;border-radius:9999px;display:block}
+.not .st{color:#86EFAC}.not .st i{background:#86EFAC}
+.need .st{color:#ffb3ae}.need .st i{background:#EF5350}
+.need{border-top:4px solid #EF5350}.not{border-top:4px solid #86EFAC}
+ul{list-style:none;padding:0;margin-top:22px}
+li{font-size:22px;line-height:1.3;padding:10px 0;border-top:1px solid #263641}
+li:first-child{border-top:0}
+li small{display:block;font-size:17px;color:#8fa1ad;margin-top:4px}
+.test{margin-top:20px;background:#1d3140;border:1px solid #263641;border-radius:8px;padding:22px 28px;font-size:21px;line-height:1.4;color:#c2ced6}
+.test b{color:#f1f5f8}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px}
+.facts div{border-top:1px solid #34444f;padding-top:12px;font-size:18px;line-height:1.35;color:#c2ced6}
+.facts .l{font:700 13px/1 "Be Vietnam Pro";letter-spacing:.1em;text-transform:uppercase;color:#8fa1ad;margin-bottom:8px}
+.foot{margin-top:auto !important;padding-top:16px;display:flex;justify-content:space-between;align-items:flex-end;margin-top:28px;font-size:18px;color:#c2ced6}
+.foot b{color:#f1f5f8}
+.date{font:500 16px/1 "JetBrains Mono";letter-spacing:.05em;color:#8fa1ad}
+</style>
+</head>
+<body>
+<div class="top"><img src="../img/dao-logo-on-dark.png" alt="Redbelly DAO"><span class="date">LAST VERIFIED 22 OCT 2026</span></div>
+<p class="kick">Redbelly KYC decision guide</p>
+<h1>Do I need KYC?</h1>
+<p class="sub">KYC means Redbelly Access, with the identity check by Averer. It is needed for anything you do on Redbelly mainnet.</p>
+<div class="cols">
+  <div class="col not">
+    <p class="st"><i></i>Not needed</p>
+    <ul>
+      <li>Buy, hold or trade RBNT on an exchange<small>For example Gate or MEXC</small></li>
+      <li>Hold, send or swap RBNT on another chain<small>Bridged RBNT or wRBNT on Ethereum, Base, BNB Chain and others</small></li>
+    </ul>
+  </div>
+  <div class="col need">
+    <p class="st"><i></i>Needed</p>
+    <ul>
+      <li>Bridge RBNT onto Redbelly mainnet</li>
+      <li>Bridge RBNT off Redbelly mainnet</li>
+      <li>Send, swap or use apps on Redbelly mainnet</li>
+      <li>Stake RBNT on Redbelly mainnet</li>
+      <li>Vote in the Redbelly DAO</li>
+    </ul>
+  </div>
+</div>
+<p class="test"><b>One line test:</b> if you never send a transaction on Redbelly mainnet (chain ID 151), you do not need Redbelly KYC.</p>
+<div class="facts">
+  <div><p class="l">Approval</p>Usually a few minutes, in rare cases a few days</div>
+  <div><p class="l">Wallets</p>Up to 10 per verified identity</div>
+  <div><p class="l">Stuck or failed</p>Averer ticket at<br><span style="white-space:nowrap">averer-help.freshdesk.com</span></div>
+</div>
+<div class="foot"><span>Verify at <b>access.redbelly.network</b></span><span>Full guide and sources: <b>pykyc.vercel.app</b></span></div>
+</body>
+</html>

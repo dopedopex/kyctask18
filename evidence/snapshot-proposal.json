@@ -1,0 +1,39 @@
+{
+  "source": "https://hub.snapshot.org/graphql",
+  "query": "proposal(id: \"0xa57ccc9a6d554c9e5a1b1ca429ad2affc2e9058f12ea50bce999460f2aea4e02\")",
+  "captured": "2026-10-22",
+  "note": "start and end are Unix times. start 1782816256 = 30 June 2026 10:44 UTC. end 1783248120 = 5 July 2026 10:42 UTC. The full proposal body is on the Snapshot page; only the Summary section is kept here.",
+  "response": {
+    "data": {
+      "proposal": {
+        "id": "0xa57ccc9a6d554c9e5a1b1ca429ad2affc2e9058f12ea50bce999460f2aea4e02",
+        "title": "DAO Proposal: Increase Governance Accessibility and Protect Contributor Privacy",
+        "choices": [
+          "For",
+          "Against",
+          "Abstain"
+        ],
+        "start": 1782816256,
+        "end": 1783248120,
+        "snapshot": 3024096,
+        "state": "closed",
+        "author": "0xA4811219b12CE85B377Cd8197b929e98d1C3CdE1",
+        "created": 1782816256,
+        "scores": [
+          8514892.529742181,
+          5983785.4650494745,
+          1340338.0139256837
+        ],
+        "scores_total": 15839016.008717343,
+        "votes": 13,
+        "quorum": 0,
+        "link": "https://snapshot.box/#/s:rbnt.eth/proposal/0xa57ccc9a6d554c9e5a1b1ca429ad2affc2e9058f12ea50bce999460f2aea4e02",
+        "space": {
+          "id": "rbnt.eth",
+          "name": "Redbelly Network"
+        },
+        "body_summary_excerpt": "**Summary**\nThis proposal seeks to improve accessibility and participation within the Redbelly Community DAO by:  \nRemoving the whitelist requirement for participation in DAO voting.  \nRemoving geographic restrictions for General DAO Members.  \nMaintaining all existing geographic limitations for High Council Members and General DAO Leadership.  \nThe proposal aims to lower barriers to participation, better protect contributor privacy, and further support the DAO's long-term goal of progressive decentralisation."
+      }
+    }
+  }
+}

@@ -1,57 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portal wording used in the Redbelly KYC guide</title>
-<style>
-:root{--ink:#1c1b20;--muted:#5b5a63;--paper:#fbfaf8;--card:#fff;--line:#dedbd5;--link:#9c0c25;color-scheme:light dark}
-@media (prefers-color-scheme: dark){:root{--ink:#f1eff2;--muted:#b4b1ba;--paper:#16151a;--card:#1f1e24;--line:#37353d;--link:#ff8da0}}
-body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:820px;margin:0 auto;padding:2rem 1rem 4rem}
-h1,h2{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;line-height:1.2}
-h2{margin-top:2.5rem;padding-top:.8rem;border-top:2px solid var(--ink);font-size:1.4rem}
-a{color:var(--link)}
-.meta{color:var(--muted);font-size:.95rem}
-blockquote{margin:.6rem 0;padding:.5rem 1rem;background:var(--card);border-left:4px solid var(--ink)}
-code{overflow-wrap:anywhere}
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Redbelly Access portal text</title>
+<meta name="description" content="The Redbelly Access on-screen text the KYC guide quotes, with file names, SHA-256 hashes and search strings so anyone can check it.">
+<link rel="icon" href="img/dao-logo-on-dark.png">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
-<body><main>
-<p><a href="index.html">Back to the guide</a></p>
-<h1>Portal wording used in the guide</h1>
-<p class="meta">Redbelly Access is an app, so its screens are not normal web pages you can link to. This page lists the on-screen wording the guide relies on, so you can compare it with the live portal at <a href="https://access.redbelly.network/">access.redbelly.network</a>. Screens can change. If the live screen differs, follow the live screen.</p>
+<body>
+<header class="bar">
+  <div class="bar-in">
+    <a href="index.html" aria-label="Back to the guide">
+      <img class="logo logo-for-dark" src="img/dao-logo-on-dark.png" alt="Redbelly DAO" width="56" height="40">
+      <img class="logo logo-for-light" src="img/dao-logo-on-light.png" alt="Redbelly DAO" width="56" height="40">
+    </a>
+    <nav aria-label="Sections">
+      <a href="index.html">Back to the guide</a>
+      <a href="#check">Check it yourself</a>
+      <a href="#e1">E1</a><a href="#e2">E2</a><a href="#e3">E3</a><a href="#e4">E4</a><a href="#e5">E5</a>
+      <a href="#other">Other saved sources</a>
+    </nav>
+  </div>
+</header>
 
-<h2 id="e1">E1. Accounts screen: wallet limit</h2>
-<p>With 10 linked accounts the portal shows:</p>
-<blockquote>Account allocation exhausted.</blockquote>
-<p>and the <b>Add another account</b> option is no longer offered.</p>
+<div class="hero">
+  <div class="hero-in">
+    <p class="kicker">Evidence for the KYC guide</p>
+    <h1>Redbelly Access portal text</h1>
+    <p class="lead">Redbelly Access is a web app, so its screens are not pages you can link to. All of its on-screen text ships in two public JavaScript files. This page quotes that text and tells you how to find each quote yourself.</p>
+    <p class="date">CAPTURED 22 OCT 2026</p>
+  </div>
+</div>
 
-<h2 id="e2">E2. Verification status messages</h2>
-<p>Pending (screen title “Identity verification pending”):</p>
-<blockquote>This could take a few minutes but in some (rare) cases it could take a few days.</blockquote>
-<p>Incomplete (screen title “Identity verification incomplete”): Averer is “not yet able to verify your identity. You may need to resubmit some information.” The button is <b>Retry identity verification</b>.</p>
-<p>Failed (screen title “Identity verification failed”): Averer “was not able to verify your identity.” The portal links to <b>CONTACT AVERER</b>.</p>
-<p>The refresh button on the pending screen is <b>Check verification status</b>.</p>
+<main class="wrap">
 
-<h2 id="e3">E3. Screens and buttons, in order</h2>
-<ol>
-<li><b>Connect wallet</b>, and <b>ADD NETWORK MANUALLY</b> if the wallet does not connect.</li>
-<li>Screen “Get access credential”: <b>Begin identity verification</b>.</li>
-<li>Notice about Averer: tick <b>I understand</b>, then <b>Continue with Averer</b>.</li>
-<li>Wallet request to let Averer access your public address. Sign it.</li>
-<li>Window “Interacting with averer.co”.</li>
-<li>“Identity verification pending”, then <b>Check verification status</b>.</li>
-<li>“Account status: Not enabled”, then <b>Enable account</b> and sign the transaction.</li>
-<li>If shown: “It seems you haven’t received the RBNT yet”, then <b>RETRY</b>.</li>
-<li>“Account status: Enabled” and “Next steps”.</li>
-<li>For an extra wallet, if shown: the account “must first be funded with at least” a stated amount of RBNT.</li>
-</ol>
+<section id="files" aria-labelledby="files-title">
+  <h2 id="files-title">The two files</h2>
+  <div class="tbl">
+  <table>
+    <thead><tr><th scope="col">File</th><th scope="col">SHA-256 on 22 October 2026</th></tr></thead>
+    <tbody>
+      <tr><td><a class="mono small" href="https://access.redbelly.network/_next/static/chunks/pages/index-25986869981a8ae9.js">pages/index-25986869981a8ae9.js</a><small>Screens, buttons, Accounts, wallet limit</small></td><td class="mono small" style="overflow-wrap:anywhere">4a128d38b556eeae044f703b1aba895f9ec7fa3d7872020c2d6038718d7db357</td></tr>
+      <tr><td><a class="mono small" href="https://access.redbelly.network/_next/static/chunks/pages/_app-cee7356aa3975380.js">pages/_app-cee7356aa3975380.js</a><small>Status messages and the "Having trouble?" FAQ</small></td><td class="mono small" style="overflow-wrap:anywhere">6699d0cdb7c326000388f1454596c95cd900a0fab7677fc0a04a283c97548e6a</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted">Both files live under <code>https://access.redbelly.network/_next/static/chunks/</code>. The names change when Redbelly ships a new version. If a link stops working, the steps below search whatever version is live.</p>
+</section>
 
-<h2 id="e4">E4. Adding wallets</h2>
-<p><b>Add another account</b> links another address from the same wallet app. <b>Link another wallet</b> links a different wallet app, connected with the wallet button at the top right of the portal. The portal also warns that you are accountable for everything a linked wallet does on the network, and shows this error for an address already linked elsewhere:</p>
-<blockquote>The address you’re trying to add is attached to another account.</blockquote>
+<section id="check" aria-labelledby="check-title">
+  <h2 id="check-title">Check a quote yourself</h2>
+  <ol class="steps">
+    <li><strong>Open the portal</strong>Go to <a href="https://access.redbelly.network/">access.redbelly.network</a> in Chrome or Edge on a computer.</li>
+    <li><strong>Open developer tools</strong>Press <span class="ui">F12</span>, then open the <span class="ui">Sources</span> tab.</li>
+    <li><strong>Search every loaded file</strong>Press <span class="ui">Ctrl+Shift+F</span> (<span class="ui">Cmd+Option+F</span> on a Mac).</li>
+    <li><strong>Paste a "Search for" line from below</strong>Press Enter, click the result, then press <span class="ui">{}</span> to make the code readable.</li>
+  </ol>
+  <p>From a terminal:</p>
+  <pre class="pin">curl -s https://access.redbelly.network/_next/static/chunks/pages/index-25986869981a8ae9.js | grep -o 'Account allocation exhausted'
+curl -s https://access.redbelly.network/_next/static/chunks/pages/index-25986869981a8ae9.js | sha256sum</pre>
+</section>
 
-<h2 id="e5">E5. “Having trouble?” help split</h2>
-<p>Problems with identity verification are directed to Averer. Problems connecting to the network or enabling an account are directed to Redbelly Support (<a href="https://vine.redbelly.network/support/">vine.redbelly.network/support/</a>).</p>
-</main></body></html>
+<section id="e1" aria-labelledby="e1-title">
+  <h2 id="e1-title">E1. Accounts screen: wallet limit</h2>
+  <p><strong>Search for:</strong> <code>Account allocation exhausted</code> (index file)</p>
+  <pre class="pin">L.length&gt;=Number("10")?(0,i.jsx)(d.A,{severity:"info",children:"Account allocation exhausted."}):null</pre>
+  <p>When 10 accounts are linked to one identity, the Accounts screen shows "Account allocation exhausted." in place of the add option. The screen's buttons are <span class="ui">Add another account</span> and <span class="ui">Link another wallet</span>.</p>
+</section>
+
+<section id="e2" aria-labelledby="e2-title">
+  <h2 id="e2-title">E2. Verification status messages</h2>
+  <p><strong>Search for:</strong> <code>could take a few days</code> (_app file)</p>
+  <pre class="pin">PENDING = "Your identity is being verified by the accredited issuer. This could take a few minutes but in some (rare) cases it could take a few days. Please check again soon."
+FAIL    = "The issuer, Averer, was not able to verify your identity. You may need to reach out to Averer directly."
+RETRY   = "The issuer, Averer, is not yet able to verify your identity. You may need to resubmit some information. If you continue having trouble however, you may need to reach out to Averer directly."</pre>
+  <p>Screen titles (index file): "Identity verification pending", "Identity verification incomplete", "Identity verification failed". Buttons: <span class="ui">Check verification status</span>, <span class="ui">Retry identity verification</span>, <span class="ui">CONTACT AVERER</span>.</p>
+</section>
+
+<section id="e3" aria-labelledby="e3-title">
+  <h2 id="e3-title">E3. Screens and buttons, start to "Enabled"</h2>
+  <p><strong>Search for:</strong> <code>Begin identity verification</code>, <code>Continue with Averer</code>, <code>Enable account</code>, <code>haven't received the RBNT</code>, <code>must first be funded</code> (index file)</p>
+  <ol>
+    <li><span class="ui">Connect wallet</span>, and the link <span class="ui">ADD NETWORK MANUALLY</span>.</li>
+    <li>Screen "Get access credential", button <span class="ui">Begin identity verification</span>.</li>
+    <li>Notice that the check is managed by Averer. Checkbox <span class="ui">I understand</span>, button <span class="ui">Continue with Averer</span>.</li>
+    <li>Wallet request letting the accredited issuer access your public address.</li>
+    <li>Window titled "Interacting with averer.co".</li>
+    <li>"Account status: Not enabled", button <span class="ui">Enable account</span>.</li>
+    <li>If the issuer's RBNT has not arrived: "It seems you haven't received the RBNT yet, which you will need to enable you account. Please wait a few minutes and try again." Button <span class="ui">RETRY</span>.</li>
+    <li>If the account has no RBNT and none is on the way: "this account must first be funded with at least [amount] USD worth RBNT coins".</li>
+    <li>"Account status: Enabled" and "Next steps".</li>
+  </ol>
+</section>
+
+<section id="e4" aria-labelledby="e4-title">
+  <h2 id="e4-title">E4. Adding wallets</h2>
+  <p><strong>Search for:</strong> <code>Link another wallet</code>, <code>attached to another account</code>, <code>accountable for all</code> (index file)</p>
+  <ul>
+    <li><span class="ui">Add another account</span>: switch your wallet's connection to the address you want to add, then sign.</li>
+    <li><span class="ui">Link another wallet</span>: connect the other wallet with the wallet widget in the top right corner, then sign.</li>
+    <li>"By linking another wallet, you will be accountable for all the actions taken by that wallet on the network."</li>
+    <li>Error: "The address you're trying to add is attached to another account."</li>
+  </ul>
+</section>
+
+<section id="e5" aria-labelledby="e5-title">
+  <h2 id="e5-title">E5. "Having trouble?" FAQ</h2>
+  <p><strong>Search for:</strong> <code>Do I need to pay for access</code>, <code>MetaMask and Coinbase Wallet</code>, <code>create a Testnet account</code> (_app file). Also visible on the portal's home page before you connect.</p>
+  <ul>
+    <li>"Do I need to pay for access?" "No, the accredited issuer that verifies your identity will cover any associated fees required to grant your network access."</li>
+    <li>"Which wallets can I use to gain access to Redbelly Network?" "MetaMask and Coinbase Wallet can be used to get access."</li>
+    <li>"Can I get access to the Redbelly Testnet?" "Yes, once you have completed the process of identity verification and enabling your account, you will be offered the option to create a Testnet account too."</li>
+    <li>"Can I get access to Redbelly Network for multiple accounts?" "Yes, once you have completed the process of identity verification and enabling your first account, you will be offered the option to add more accounts which will be connected to your identity."</li>
+    <li>"Who will verify my identity?" "Your identity will be verified by an accredited issuer, Averer."</li>
+    <li>Identity verification problems: "contact Averer", linking to <a href="https://www.averer.co/">averer.co</a>. Connection or account errors: "Redbelly Support", linking to <a href="https://vine.redbelly.network/support">vine.redbelly.network/support</a>.</li>
+  </ul>
+</section>
+
+<section id="other" aria-labelledby="other-title">
+  <h2 id="other-title">Other saved sources</h2>
+  <ul>
+    <li><a href="evidence/snapshot-proposal.json">snapshot-proposal.json</a>: the 5 July 2026 DAO vote, read from the Snapshot API (title, dates, For, Against, Abstain, and the Summary).</li>
+    <li><a href="evidence/terms-clause-15.txt">terms-clause-15.txt</a>: clause 15 of the Redbelly Network terms.</li>
+    <li><a href="evidence/averer-ticket-form.json">averer-ticket-form.json</a>: the fields on Averer's ticket form.</li>
+    <li><a href="evidence/governance-kyc-notice.md">governance-kyc-notice.md</a>: the DAO governance site's KYC notice for voting, with its file hash.</li>
+    <li><a href="evidence/access-portal-text.md">access-portal-text.md</a>: this page as plain text.</li>
+  </ul>
+</section>
+
+</main>
+<footer><p>Captured <span class="mono">22 October 2026</span>. If the live portal differs from this page, follow the live portal. <a href="index.html">Back to the guide</a>.</p></footer>
+</body>
+</html>

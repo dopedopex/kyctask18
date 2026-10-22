@@ -1,0 +1,18 @@
+Do I need KYC on Redbelly? (decision guide image attached)
+
+NOT NEEDED: buying, holding or trading RBNT on an exchange, or holding bridged RBNT on another chain.
+NEEDED: anything on Redbelly mainnet. Send, swap, use apps, bridge in or out, stake, vote in the DAO.
+
+Get verified at https://access.redbelly.network
+Connect wallet, Begin identity verification, I understand, Continue with Averer. After approval press Enable account.
+You need MetaMask or Coinbase Wallet and a passport. No fee: the issuer covers it.
+
+Approval: usually a few minutes, in rare cases a few days. That is the portal's own wording while you wait. Press Check verification status. Still pending after a few days, or "Identity verification failed": open an Averer ticket at https://averer-help.freshdesk.com/support/tickets/new
+
+Wallets: up to 10 wallets per verified identity. At 10 the portal shows "Account allocation exhausted." and stops you adding more.
+
+Regions: two separate rules. The DAO is open to general members from every region (Snapshot vote closed 5 July 2026: https://snapshot.box/#/s:rbnt.eth/proposal/0xa57ccc9a6d554c9e5a1b1ca429ad2affc2e9058f12ea50bce999460f2aea4e02). Redbelly Network still does not offer services in the 18 jurisdictions in clause 15.1 of its terms.
+
+Never share your seed phrase, private key or ID photos.
+Full guide and sources: https://pykyc.vercel.app/
+Last verified 22 October 2026
