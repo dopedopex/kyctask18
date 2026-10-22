@@ -22,6 +22,10 @@
       <a href="#e1">E1</a><a href="#e2">E2</a><a href="#e3">E3</a><a href="#e4">E4</a><a href="#e5">E5</a>
       <a href="#other">Other saved sources</a>
     </nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
   </div>
 </header>
 
@@ -137,5 +141,14 @@ RETRY   = "The issuer, Averer, is not yet able to verify your identity. You may 
 
 </main>
 <footer><p>Captured <span class="mono">22 October 2026</span>. If the live portal differs from this page, follow the live portal. <a href="index.html">Back to the guide</a>.</p></footer>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById("theme");
+  function isDark(){var t=root.getAttribute("data-theme");return t?t==="dark":!window.matchMedia("(prefers-color-scheme: light)").matches}
+  function label(){var d=isDark(),l=d?"Switch to light theme":"Switch to dark theme";btn.setAttribute("aria-label",l);btn.title=l;btn.classList.toggle("is-light",!d)}
+  label();
+  btn.addEventListener("click",function(){var n=isDark()?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}label()});
+})();
+</script>
 </body>
 </html>

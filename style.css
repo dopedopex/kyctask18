@@ -56,8 +56,11 @@ code{font-size:.9em;background:var(--container);border:1px solid var(--edge);bor
 .bar nav::-webkit-scrollbar{display:none}
 .bar nav a{color:var(--text-2);text-decoration:none;font-size:14px;font-weight:500;padding:6px 10px;border-radius:var(--r);white-space:nowrap}
 .bar nav a:hover,.bar nav a.active{color:var(--text);background:var(--container)}
-.theme{font:500 14px var(--font-sans);color:var(--text);background:transparent;border:1px solid var(--outline-variant);border-radius:var(--r);padding:6px 10px;cursor:pointer;white-space:nowrap}
-.theme:hover{border-color:var(--brand)}
+.theme{flex:none;width:40px;height:40px;display:grid;place-items:center;color:var(--text);background:transparent;border:1px solid var(--outline-variant);border-radius:var(--r);padding:0;cursor:pointer}
+.theme svg{width:20px;height:20px;display:block}
+.theme .i-moon,.theme.is-light .i-sun{display:none}
+.theme.is-light .i-moon{display:block}
+.theme:hover{border-color:var(--brand);color:var(--accent)}
 .bar .logo-for-light{display:none}
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .bar .logo-for-dark{display:none}:root:not([data-theme="dark"]) .bar .logo-for-light{display:block}}
 :root[data-theme="light"] .bar .logo-for-dark{display:none}

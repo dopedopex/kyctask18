@@ -36,7 +36,10 @@
       <a href="#pin">Pin version</a>
       <a href="#sources">Sources</a>
     </nav>
-    <button class="theme" id="theme" type="button">Light theme</button>
+    <button class="theme" id="theme" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
   </div>
 </header>
 
@@ -347,7 +350,7 @@ Last verified 22 October 2026</pre>
 (function(){
   var root=document.documentElement,btn=document.getElementById("theme");
   function isDark(){var t=root.getAttribute("data-theme");return t?t==="dark":!window.matchMedia("(prefers-color-scheme: light)").matches}
-  function label(){btn.textContent=isDark()?"Light theme":"Dark theme"}
+  function label(){var d=isDark(),l=d?"Switch to light theme":"Switch to dark theme";btn.setAttribute("aria-label",l);btn.title=l;btn.classList.toggle("is-light",!d)}
   label();
   btn.addEventListener("click",function(){var n=isDark()?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}label()});
   var top=document.querySelector(".to-top");
