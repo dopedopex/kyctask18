@@ -20,6 +20,7 @@ const pin = m[1].replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, 
 writeFileSync(join(root, "pin.txt"), pin.trimEnd() + "\n");
 console.log("pin.txt written");
 
+const footFont = readFileSync(join(root, "fonts", "BeVietnamPro-Regular.ttf")).toString("base64");
 const exe = process.env.CHROMIUM_PATH;
 const browser = await chromium.launch(exe ? { executablePath: exe } : {});
 
@@ -46,7 +47,7 @@ await page.pdf({
   margin: { top: "16mm", bottom: "16mm", left: "14mm", right: "14mm" },
   displayHeaderFooter: true,
   headerTemplate: "<span></span>",
-  footerTemplate: '<div style="font:9px sans-serif;color:#596975;width:100%;padding:0 14mm;display:flex;justify-content:space-between"><span>Redbelly KYC and Wallet Activation Explainer. Last verified 22 October 2026. pykyc.vercel.app</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>',
+  footerTemplate: `<style>@font-face{font-family:BVP;src:url(data:font/ttf;base64,${footFont})}</style>` + '<div style="font:9px BVP;color:#596975;width:100%;padding:0 14mm;display:flex;justify-content:space-between"><span>Redbelly KYC and Wallet Activation Explainer. Last verified 22 October 2026. pykyc.vercel.app</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>',
 });
 console.log("KYC-and-Wallet-Activation-Explainer.pdf written");
 await browser.close();

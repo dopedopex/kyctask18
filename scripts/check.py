@@ -7,7 +7,7 @@
   - pin.txt is identical to the pin block on the page
   - the pin and the guide use the same wording for questions 2, 3 and 4
   - one "last verified" date everywhere
-  - the PDF text passes the same character checks
+  - the PDF text passes the same character checks and embeds only the brand fonts
 
   python3 scripts/check.py            offline checks
   python3 scripts/check.py --online   also fetch every external link and the portal files
@@ -107,6 +107,11 @@ for f in [ROOT / "index.html", ROOT / "evidence.html", ROOT / "pin.txt", *sorted
 if PDF.is_file():
     pdf_text = subprocess.run(["pdftotext", str(PDF), "-"], capture_output=True, text=True).stdout
     scan(PDF.name, pdf_text)
+    fonts = subprocess.run(["pdffonts", str(PDF)], capture_output=True, text=True).stdout
+    for line in fonts.splitlines()[2:]:
+        name = line.split()[0].split("+")[-1] if line.split() else ""
+        if name and not name.startswith(("BeVietnamPro", "JetBrainsMono")):
+            problems.append(f"PDF uses font {name}: the brand kit allows only Be Vietnam Pro and JetBrains Mono")
     if "Account allocation exhausted" not in pdf_text:
         problems.append("PDF looks stale: run node scripts/build.mjs")
 else:
