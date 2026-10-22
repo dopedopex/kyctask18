@@ -43,6 +43,7 @@ Everything derived is built from one source, so the page, pin, PDF and images ca
 node scripts/build.mjs              # pin.txt, decision-guide.png, img/og.png, the PDF (needs playwright + Chromium)
 python3 scripts/check.py            # dashes, emoji, credit, sources cited, anchors, pin matches guide (needs pdftotext)
 python3 scripts/check.py --online   # also checks every external link and re-reads the portal files
+BANNED_NAMES="name1,name2" python3 scripts/check.py   # also fail if these names appear in the site or PDF
 ```
 
 ## Files

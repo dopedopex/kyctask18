@@ -40,6 +40,13 @@ const page = await browser.newPage();
 await page.emulateMedia({ media: "print", colorScheme: "light" });
 await page.goto(pathToFileURL(join(root, "index.html")).href, { waitUntil: "load" });
 await page.evaluate(() => document.fonts.ready);
+// Relative links would otherwise become file:// paths of the build machine inside the PDF.
+await page.evaluate((site) => {
+  document.querySelectorAll("a[href]").forEach((a) => {
+    const h = a.getAttribute("href");
+    if (!/^(https?:|mailto:|#)/.test(h)) a.setAttribute("href", new URL(h, site).href);
+  });
+}, "https://pykyc.vercel.app/");
 await page.pdf({
   path: join(root, "KYC-and-Wallet-Activation-Explainer.pdf"),
   format: "A4",

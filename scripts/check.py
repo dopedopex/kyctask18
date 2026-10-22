@@ -13,6 +13,7 @@
   python3 scripts/check.py --online   also fetch every external link and the portal files
 """
 import hashlib
+import os
 import html as htmllib
 import re
 import subprocess
@@ -36,7 +37,9 @@ DATE_LONG, DATE_SHORT = "22 October 2026", "22 OCT 2026"
 
 DASHES = re.compile("[" + "".join(chr(c) for c in (0x2010, 0x2011, 0x2012, 0x2013, 0x2014, 0x2015, 0x2212, 0xFE58, 0xFE63, 0xFF0D)) + "]")
 EMOJI = re.compile("[" + chr(0x1F000) + "-" + chr(0x1FAFF) + chr(0x2600) + "-" + chr(0x27BF) + chr(0x2B00) + "-" + chr(0x2BFF) + chr(0xFE0F) + "]")
-CREDIT = re.compile(r"dopedopex|made by|created by|written by|author:", re.I)
+# Extra names to ban can be passed as BANNED_NAMES="name1,name2" so they never sit in a published file.
+_names = [re.escape(n.strip()) for n in os.environ.get("BANNED_NAMES", "").split(",") if n.strip()]
+CREDIT = re.compile("|".join(_names + ["made by", "created by", "written by", "author:"]), re.I)
 
 problems = []
 
@@ -112,6 +115,12 @@ if PDF.is_file():
         name = line.split()[0].split("+")[-1] if line.split() else ""
         if name and not name.startswith(("BeVietnamPro", "JetBrainsMono")):
             problems.append(f"PDF uses font {name}: the brand kit allows only Be Vietnam Pro and JetBrains Mono")
+    raw = PDF.read_bytes()
+    if b"file://" in raw:
+        problems.append("PDF contains file:// links (local build paths): run node scripts/build.mjs")
+    for leak in [b"/home/", b"/root/"] + [n.encode() for n in os.environ.get("BANNED_NAMES", "").split(",") if n.strip()]:
+        if leak in raw:
+            problems.append(f"PDF contains {leak.decode()}")
     if "Account allocation exhausted" not in pdf_text:
         problems.append("PDF looks stale: run node scripts/build.mjs")
 else:
