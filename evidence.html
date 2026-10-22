@@ -77,6 +77,11 @@ curl -s https://access.redbelly.network/_next/static/chunks/pages/index-25986869
 FAIL    = "The issuer, Averer, was not able to verify your identity. You may need to reach out to Averer directly."
 RETRY   = "The issuer, Averer, is not yet able to verify your identity. You may need to resubmit some information. If you continue having trouble however, you may need to reach out to Averer directly."</pre>
   <p>Screen titles (index file): "Identity verification pending", "Identity verification incomplete", "Identity verification failed". Buttons: <span class="ui">Check verification status</span>, <span class="ui">Retry identity verification</span>, <span class="ui">CONTACT AVERER</span>.</p>
+  <h3>The 30 second re-check</h3>
+  <p><strong>Search for:</strong> <code>(0,I.cb)(3e4)</code> (index file)</p>
+  <pre class="pin">onClick:async()=&gt;{...,await (0,I.cb)(3e4),await b(...sessionId)},children:"Check verification status"</pre>
+  <p><code>I.cb</code> is a delay helper (module 54994 in <code>chunks/9971-5aa2e37871eac7c7.js</code>, which ends in <code>new Promise(e=&gt;setTimeout(e,t))</code>). <code>3e4</code> is 30,000 milliseconds. So the button waits 30 seconds, then asks for your verification status again.</p>
+  <p>No other time limit for approval appears in the portal's code. We searched the two page files, the shared chunks and all 85 lazy loaded chunks for hours, days, minutes and "within". The only approval wording is the PENDING message above.</p>
 </section>
 
 <section id="e3" aria-labelledby="e3-title">

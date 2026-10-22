@@ -50,6 +50,18 @@ RETRY   = "The issuer, Averer, is not yet able to verify your identity. You may 
 Screen titles: "Identity verification pending", "Identity verification incomplete", "Identity verification failed".
 Buttons: "Check verification status", "Retry identity verification", "CONTACT AVERER".
 
+### The 30 second re-check (index file)
+
+**Search for:** `(0,I.cb)(3e4)`
+
+```
+onClick:async()=>{...,await (0,I.cb)(3e4),await b(...sessionId)},children:"Check verification status"
+```
+
+`I.cb` is a delay helper (module 54994 in `https://access.redbelly.network/_next/static/chunks/9971-5aa2e37871eac7c7.js`, ending in `new Promise(e=>setTimeout(e,t))`). `3e4` is 30,000 milliseconds, so the button waits 30 seconds and then asks for the verification status again.
+
+No other approval time limit appears in the portal's code. The two page files, the shared chunks and all 85 lazy loaded chunks were searched for hours, days, minutes and "within" on 22 October 2026. The PENDING message above is the only approval wording.
+
 ## E3. Screens and buttons from start to "Enabled" (index file)
 
 **Search for:** `Begin identity verification`, `Continue with Averer`, `Enable account`, `haven't received the RBNT`, `must first be funded`

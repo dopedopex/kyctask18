@@ -7,7 +7,7 @@ Get verified at https://access.redbelly.network
 Connect wallet, Begin identity verification, I understand, Continue with Averer. After approval press Enable account.
 You need MetaMask or Coinbase Wallet and a passport. No fee: the issuer covers it.
 
-Approval: usually a few minutes, in rare cases a few days. That is the portal's own wording while you wait. Press Check verification status. Still pending after a few days, or "Identity verification failed": open an Averer ticket at https://averer-help.freshdesk.com/support/tickets/new
+Approval: usually a few minutes, in rare cases a few days. That is the portal's own wording while you wait. Press Check verification status once, it re-checks after 30 seconds. Still pending after a few days, or "Identity verification failed": open an Averer ticket at https://averer-help.freshdesk.com/support/tickets/new
 
 Wallets: up to 10 wallets per verified identity. At 10 the portal shows "Account allocation exhausted." and stops you adding more.
 

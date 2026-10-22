@@ -123,7 +123,7 @@ if "--online" in sys.argv:
         if code != 200:
             problems.append(f"link {url} returned {code}")
     portal = {
-        "https://access.redbelly.network/_next/static/chunks/pages/index-25986869981a8ae9.js": ["Account allocation exhausted.", 'Number("10")', "Enable account", "Begin identity verification", "Continue with Averer", "Link another wallet"],
+        "https://access.redbelly.network/_next/static/chunks/pages/index-25986869981a8ae9.js": ["Account allocation exhausted.", 'Number("10")', "(0,I.cb)(3e4)", "Enable account", "Begin identity verification", "Continue with Averer", "Link another wallet"],
         "https://access.redbelly.network/_next/static/chunks/pages/_app-cee7356aa3975380.js": ["could take a few days", "MetaMask and Coinbase Wallet", "create a Testnet account"],
     }
     for url, quotes in portal.items():

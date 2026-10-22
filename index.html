@@ -151,12 +151,12 @@
 
   <h3 id="b3">3. How long does KYC approval take?</h3>
   <p class="answer">Usually a few minutes, in rare cases a few days. That is the portal's own wording while you wait.</p>
-  <p>The pending screen says: "This could take a few minutes but in some (rare) cases it could take a few days. Please check again soon."<sup class="c"><a href="#e2">E2</a></sup> It is an estimate, not a promise. What to do depends on the screen you see:</p>
+  <p>The pending screen says: "This could take a few minutes but in some (rare) cases it could take a few days. Please check again soon."<sup class="c"><a href="#e2">E2</a></sup> It is an estimate, not a promise. The portal's code has no fixed deadline beyond this. The one fixed number is the refresh: after you press <span class="ui">Check verification status</span> the portal waits <span class="mono">30 seconds</span> before it asks Averer again, so press it once and wait.<sup class="c"><a href="#e2">E2</a></sup> What to do depends on the screen you see:</p>
   <div class="tbl stack">
   <table>
     <thead><tr><th scope="col">Screen title</th><th scope="col">What it means</th><th scope="col">What to do</th></tr></thead>
     <tbody>
-      <tr><td>Identity verification pending</td><td data-l="What it means">Averer is still checking.</td><td data-l="What to do">Press <span class="ui">Check verification status</span>. Still pending after a few days: <a href="#d-ticket">open an Averer ticket</a>.</td></tr>
+      <tr><td>Identity verification pending</td><td data-l="What it means">Averer is still checking.</td><td data-l="What to do">Press <span class="ui">Check verification status</span> once and wait 30 seconds. Still pending after a few days: <a href="#d-ticket">open an Averer ticket</a>.</td></tr>
       <tr><td>Identity verification incomplete</td><td data-l="What it means">Averer "is not yet able to verify your identity". You may need to resubmit some information.</td><td data-l="What to do">Press <span class="ui">Retry identity verification</span> and resubmit.</td></tr>
       <tr><td>Identity verification failed</td><td data-l="What it means">Averer "was not able to verify your identity".</td><td data-l="What to do"><a href="#d-ticket">Open an Averer ticket</a>.</td></tr>
       <tr><td>"It seems you haven't received the RBNT yet"</td><td data-l="What it means">You are approved. The RBNT that pays for enabling has not arrived.</td><td data-l="What to do">Wait a few minutes and press <span class="ui">RETRY</span>.</td></tr>
@@ -227,7 +227,7 @@
     <li><strong>Read the notice and continue to Averer</strong>The portal says Averer manages the check and your documents are not stored on Redbelly Network. Tick <span class="ui">I understand</span>, then press <span class="ui">Continue with Averer</span>.<sup class="c"><a href="#e3">E3</a></sup></li>
     <li><strong>Sign the request in your wallet</strong>Your wallet asks you to let the accredited issuer access your public address. Sign it.<sup class="c"><a href="#e3">E3</a></sup></li>
     <li><strong>Complete the check with Averer</strong>A window titled "Interacting with averer.co" opens. Submit your passport and finish the biometric check there.<sup class="c"><a href="#s1">S1</a></sup><sup class="c"><a href="#e3">E3</a></sup></li>
-    <li><strong>Wait for approval</strong>The screen shows "Identity verification pending". Usually a few minutes, in rare cases a few days. Press <span class="ui">Check verification status</span> to refresh.<sup class="c"><a href="#e2">E2</a></sup></li>
+    <li><strong>Wait for approval</strong>The screen shows "Identity verification pending". Usually a few minutes, in rare cases a few days. Press <span class="ui">Check verification status</span> to refresh. The portal takes 30 seconds to re-check.<sup class="c"><a href="#e2">E2</a></sup></li>
     <li><strong>Enable your account</strong>After approval the account shows "Account status: Not enabled". Press <span class="ui">Enable account</span> and sign the transaction. If you see "It seems you haven't received the RBNT yet", wait a few minutes and press <span class="ui">RETRY</span>.<sup class="c"><a href="#e3">E3</a></sup></li>
     <li><strong>Check it worked</strong>The account shows "Account status: Enabled" and the portal shows "Next steps". This wallet can now send, bridge, stake and vote on Redbelly mainnet.<sup class="c"><a href="#e3">E3</a></sup></li>
   </ol>
@@ -252,7 +252,7 @@
   <h3>Approval is taking too long</h3>
   <ol>
     <li>Make sure you are on access.redbelly.network with the wallet you verified with.</li>
-    <li>Press <span class="ui">Check verification status</span>.</li>
+    <li>Press <span class="ui">Check verification status</span> once and wait 30 seconds for the re-check.</li>
     <li>Most checks take a few minutes and rare ones a few days.<sup class="c"><a href="#e2">E2</a></sup> Still "Identity verification pending" after a few days: <a href="#d-ticket">open an Averer ticket</a>.</li>
   </ol>
 
@@ -290,7 +290,7 @@ Get verified at https://access.redbelly.network
 Connect wallet, Begin identity verification, I understand, Continue with Averer. After approval press Enable account.
 You need MetaMask or Coinbase Wallet and a passport. No fee: the issuer covers it.
 
-Approval: usually a few minutes, in rare cases a few days. That is the portal's own wording while you wait. Press Check verification status. Still pending after a few days, or "Identity verification failed": open an Averer ticket at https://averer-help.freshdesk.com/support/tickets/new
+Approval: usually a few minutes, in rare cases a few days. That is the portal's own wording while you wait. Press Check verification status once, it re-checks after 30 seconds. Still pending after a few days, or "Identity verification failed": open an Averer ticket at https://averer-help.freshdesk.com/support/tickets/new
 
 Wallets: up to 10 wallets per verified identity. At 10 the portal shows "Account allocation exhausted." and stops you adding more.
 
@@ -328,7 +328,7 @@ Last verified 22 October 2026</pre>
     <li id="s18"><span class="sid">S18</span><span><a href="https://averer-help.freshdesk.com/support/tickets/new">averer-help.freshdesk.com/support/tickets/new</a><span class="kind">OFFICIAL</span><span class="what">Averer ticket form. Fields: Full Name, Email Address, Subject, What is your issue?, Redbelly Wallet Address (Required), Attach files. Saved: <a href="evidence/averer-ticket-form.json">averer-ticket-form.json</a>.</span></span></li>
     <li id="s19"><span class="sid">S19</span><span><a href="https://www.averer.co/">averer.co</a><span class="kind">OFFICIAL</span><span class="what">Averer's website. The portal's "contact Averer" and CONTACT AVERER links go here.</span></span></li>
     <li id="e1"><span class="sid">E1</span><span><a href="evidence.html#e1">Accounts screen: wallet limit</a><span class="kind">PORTAL</span><span class="what"><code>L.length&gt;=Number("10")</code> then "Account allocation exhausted."</span></span></li>
-    <li id="e2"><span class="sid">E2</span><span><a href="evidence.html#e2">Verification status messages</a><span class="kind">PORTAL</span><span class="what">Pending, incomplete and failed wording, and the buttons on each screen.</span></span></li>
+    <li id="e2"><span class="sid">E2</span><span><a href="evidence.html#e2">Verification status messages</a><span class="kind">PORTAL</span><span class="what">Pending, incomplete and failed wording, the buttons on each screen, and the 30 second re-check behind Check verification status.</span></span></li>
     <li id="e3"><span class="sid">E3</span><span><a href="evidence.html#e3">Screens and buttons, start to "Enabled"</a><span class="kind">PORTAL</span><span class="what">Connect wallet, Begin identity verification, Continue with Averer, Enable account, RETRY.</span></span></li>
     <li id="e4"><span class="sid">E4</span><span><a href="evidence.html#e4">Adding wallets</a><span class="kind">PORTAL</span><span class="what">Add another account, Link another wallet, the accountability notice and the "attached to another account" error.</span></span></li>
     <li id="e5"><span class="sid">E5</span><span><a href="evidence.html#e5">"Having trouble?" FAQ</a><span class="kind">PORTAL</span><span class="what">No fee, MetaMask and Coinbase Wallet, more accounts, Testnet account, Averer as issuer, and the Averer or Redbelly Support split.</span></span></li>
