@@ -58,7 +58,7 @@ code{font-size:.9em;background:var(--container);border:1px solid var(--edge);bor
 .bar nav a:hover,.bar nav a.active{color:var(--text);background:var(--container)}
 .theme{font:500 14px var(--font-sans);color:var(--text);background:transparent;border:1px solid var(--outline-variant);border-radius:var(--r);padding:6px 10px;cursor:pointer;white-space:nowrap}
 .theme:hover{border-color:var(--brand)}
-.logo-for-light{display:none}
+.bar .logo-for-light{display:none}
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .bar .logo-for-dark{display:none}:root:not([data-theme="dark"]) .bar .logo-for-light{display:block}}
 :root[data-theme="light"] .bar .logo-for-dark{display:none}
 :root[data-theme="light"] .bar .logo-for-light{display:block}
@@ -170,7 +170,9 @@ ol.src a{overflow-wrap:anywhere}
 footer{max-width:1280px;margin:64px auto 0;padding:24px 16px 48px;border-top:1px solid var(--edge);color:var(--muted);font-size:14px}
 @media (min-width:900px){footer{padding-left:64px;padding-right:64px}}
 
-.to-top{position:fixed;right:16px;bottom:16px;opacity:0;pointer-events:none;transition:opacity .2s;font:600 14px var(--font-sans);background:var(--slate);color:var(--text);border:1px solid var(--edge);border-radius:var(--r);padding:8px 12px;cursor:pointer}
+.to-top{position:fixed;right:16px;bottom:16px;width:44px;height:44px;display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .2s;background:var(--slate);color:var(--text);border:1px solid var(--edge);border-radius:var(--r);padding:0;cursor:pointer}
+.to-top:hover{border-color:var(--brand);color:var(--accent)}
+.to-top svg{width:20px;height:20px;display:block}
 .to-top.show{opacity:1;pointer-events:auto}
 
 /* Print and PDF: light theme, no chrome */
